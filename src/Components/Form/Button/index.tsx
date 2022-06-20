@@ -12,7 +12,7 @@ export function Button({title,...rest} : Props){
       {...rest}
     >
       <Title>
-
+        {title}
       </Title>
     </Container>
   );
