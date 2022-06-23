@@ -2,13 +2,13 @@ import React from 'react';
 import { FlatList } from 'react-native';
 import { Button } from '../../Components/Form/Button';
 import { categories } from '../../utils/categories';
-import { 
-  Container, 
-  Header, 
+import {
+  Container,
+  Header,
   Title,
   Category,
   Icon,
-  Name, 
+  Name,
   Separator,
   Footer
 } from './styles';
@@ -39,7 +39,7 @@ export function CategorySelect({
         <Title>Categoria</Title>
       </Header>
 
-      <FlatList 
+      <FlatList
         data={categories}
         style={{flex:1, width: '100%'}}
         keyExtractor={(item ) => item.key}
@@ -55,7 +55,7 @@ export function CategorySelect({
         ItemSeparatorComponent={ () => <Separator/>}
       />
       <Footer>
-        <Button 
+        <Button
           title={"Selecionar"}
           onPress={closeSelectCategory}
         />

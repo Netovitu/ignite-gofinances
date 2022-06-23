@@ -25,12 +25,12 @@ export function AppRoutes(){
         }
       }}
     >
-    <Screen 
+    <Screen
       name="Listagem"
       component={Dashboard}
       options={{
         tabBarIcon:(({ size, color}) =>
-          <MaterialIcons 
+          <MaterialIcons
             name="format-list-bulleted"
             size={size}
             color={color}
@@ -38,12 +38,12 @@ export function AppRoutes(){
         )
       }}
     />
-    <Screen 
+    <Screen
       name="Cadastrar"
       component={Register}
       options={{
         tabBarIcon:(({ size, color}) =>
-          <MaterialIcons 
+          <MaterialIcons
             name="attach-money"
             size={size}
             color={color}
@@ -51,12 +51,12 @@ export function AppRoutes(){
         )
       }}
     />
-    <Screen 
+    <Screen
       name="Resumo"
       component={Register}
       options={{
         tabBarIcon:(({ size, color}) =>
-          <MaterialIcons 
+          <MaterialIcons
             name="pie-chart"
             size={size}
             color={color}

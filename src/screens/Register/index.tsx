@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { 
-  Modal, 
+import {
+  Modal,
   Keyboard,
   Alert 
 } from 'react-native';
@@ -20,19 +20,19 @@ import { TransactionTypeButton } from '../../Components/Form/TransactionTypeButt
 import { CategorySelect } from '../CategorySelect';
 
 import { CategorySelectButton } from '../../Components/Form/CategorySelectButton';
-import { 
+import {
   Container,
   Header,
-  Title, 
+  Title,
   Form,
   Fields,
   TransactionsTypes
 } from './styles';
 
-interface FormData {
-  name: string;
-  amount: string;
-}
+//interface FormData {
+//  name: string;
+// amount: string;
+//}
 
 const schema = Yup.object().shape({
   name: Yup
@@ -85,7 +85,7 @@ export function Register(){
       return Alert.alert('Selecione o tipo da transação');
 
     if(category.key === 'category')
-      return Alert.alert('Selecione a categoria')
+      return Alert.alert('Selecione a categoria');
 
     const newTransaction = {
       id: String(uuid.v4()),
@@ -94,7 +94,6 @@ export function Register(){
       type: transactionType,
       category: category.key,
       date: new Date()
-
     }
 
     try{
@@ -126,7 +125,7 @@ export function Register(){
   }
 
   return (
-    <TouchableWithoutFeedback 
+    <TouchableWithoutFeedback
       onPress={Keyboard.dismiss}
       containerStyle={{ flex: 1 }}
       style={{flex: 1 }}
@@ -140,7 +139,7 @@ export function Register(){
           <Fields>
             <InputForm
               name="name"
-              control={control} 
+              control={control}
               placeholder='Nome'
               autoCapitalize="sentences"
               autoCorrect={false}
@@ -148,19 +147,19 @@ export function Register(){
             />
             <InputForm
               name="amount"
-              control={control} 
+              control={control}
               placeholder='Preço'
               keyboardType="numeric"
               error={errors.amount && errors.amount.message}
             />
             <TransactionsTypes>
-              <TransactionTypeButton 
+              <TransactionTypeButton
                 type='up'
                 title='Income'
                 onPress={() => handleTransactionsTypeSelect('positive')}
                 isActive={transactionType === 'positive'}
               />
-              <TransactionTypeButton 
+              <TransactionTypeButton
                 type='down'
                 title='Outcome'
                 onPress={() => handleTransactionsTypeSelect('negative')}
@@ -168,21 +167,21 @@ export function Register(){
               />
             </TransactionsTypes>
 
-            <CategorySelectButton 
+            <CategorySelectButton
               title={category.name}
               onPress={handleOpenSelectCategoryModal}
             />
 
           </Fields>
 
-          <Button 
-            title='Enviar' 
+          <Button
+            title='Enviar'
             onPress={handleSubmit(handleRegister)}
           />
         </Form>
 
         <Modal visible={categoryModalOpen}>
-          <CategorySelect 
+          <CategorySelect
             category={category}
             setCategory={setCategory}
             closeSelectCategory={handleCloseSelectCategoryModal}

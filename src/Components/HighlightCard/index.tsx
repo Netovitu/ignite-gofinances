@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { 
+import {
   Container,
   Header,
   Title,
@@ -8,7 +8,6 @@ import {
   Footer,
   Amount,
   LastTransaction
-
 } from './styles';
 
 interface Props{
@@ -26,8 +25,8 @@ const icon = {
 
 export function HighlightCard({
   type,
-  title, 
-  amount, 
+  title,
+  amount,
   lastTransaction
 } : Props){
   return(
@@ -36,11 +35,11 @@ export function HighlightCard({
         <Title type={type}>{title}</Title>
         <Icon name={icon[type]} type={type}/>
       </Header>
+      
       <Footer>
         <Amount type={type}>{amount}</Amount>
         <LastTransaction type={type}>{lastTransaction}</LastTransaction>
       </Footer>
-
     </Container>
   )
 }

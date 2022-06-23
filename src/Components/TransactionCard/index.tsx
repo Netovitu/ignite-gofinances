@@ -1,7 +1,7 @@
 import React from 'react';
 import { categories } from '../../utils/categories';
 
-import { 
+import {
   Container,
   Title,
   Amount,
@@ -9,7 +9,7 @@ import {
   Category,
   Icon,
   CategoryName,
-  Date 
+  Date
 
 } from './styles';
 

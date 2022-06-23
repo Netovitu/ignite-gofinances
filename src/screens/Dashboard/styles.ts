@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import { FlatList, FlatListProps } from 'react-native';
 import { Feather } from '@expo/vector-icons';
-import { RFPercentage, RFValue } from 'react-native-responsive-fontsize'
+import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import { getBottomSpace, getStatusBarHeight}  from 'react-native-iphone-x-helper';
 import { BorderlessButton } from 'react-native-gesture-handler';
 
@@ -97,7 +97,7 @@ export const Title = styled.Text`
 `;
 
 export const TransactionList = styled(
-  FlatList as new (props: FlatListProps<DataListProps>) => 
+  FlatList as new (props: FlatListProps<DataListProps>) =>
   FlatList<DataListProps>
   ).attrs({
   showsVerticalScrollIndicator: false,

@@ -14,7 +14,7 @@ export function Button({
 } : Props){
   return (
     <Container
-      onPress={onPress} 
+      onPress={onPress}
       {...rest}
     >
       <Title>
