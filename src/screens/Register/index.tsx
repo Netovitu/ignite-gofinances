@@ -30,7 +30,7 @@ import {
 } from './styles';
 
 //interface FormData {
-//  name: string;
+// name: string;
 // amount: string;
 //}
 
@@ -42,6 +42,7 @@ const schema = Yup.object().shape({
   .number()
   .typeError('Informe um valor númerico')
   .positive('O valor não pode ser negativo')
+  .required('O preço é obrigatório'),
 })
 
 export function Register(){
@@ -140,7 +141,7 @@ export function Register(){
             <InputForm
               name="name"
               control={control}
-              placeholder='Nome'
+              placeholder="Nome"
               autoCapitalize="sentences"
               autoCorrect={false}
               error={errors.name && errors.name.message}
@@ -148,7 +149,7 @@ export function Register(){
             <InputForm
               name="amount"
               control={control}
-              placeholder='Preço'
+              placeholder="Preço"
               keyboardType="numeric"
               error={errors.amount && errors.amount.message}
             />

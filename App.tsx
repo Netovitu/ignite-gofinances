@@ -4,6 +4,8 @@ import React from 'react';
 import AppLoading from 'expo-app-loading';
 import { ThemeProvider } from 'styled-components';
 
+import { NavigationContainer } from '@react-navigation/native';
+
  import {
   useFonts,
   Poppins_400Regular,
@@ -13,7 +15,6 @@ import { ThemeProvider } from 'styled-components';
 
 import theme from './src/global/styles/theme';
 
-import { NavigationContainer } from '@react-navigation/native';
 import { AppRoutes } from './src/routes/app.routes';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
