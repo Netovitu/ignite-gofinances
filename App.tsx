@@ -1,10 +1,13 @@
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import 'intl';
 import 'intl/locale-data/jsonp/pt-BR';
 import React from 'react';
 import AppLoading from 'expo-app-loading';
 import { ThemeProvider } from 'styled-components';
+import { Routes } from './src/routes';
+import theme from './src/global/styles/theme';
 
-import { NavigationContainer } from '@react-navigation/native';
+import { AuthProvider, useAuth } from './src/hooks/auth';
 
  import {
   useFonts,
@@ -13,11 +16,6 @@ import { NavigationContainer } from '@react-navigation/native';
   Poppins_700Bold
  } from '@expo-google-fonts/poppins';
 
-import theme from './src/global/styles/theme';
-
-import { AppRoutes } from './src/routes/app.routes';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-
 export default function App() {
   const [fontsLoaded] = useFonts({
     Poppins_400Regular,
@@ -25,16 +23,18 @@ export default function App() {
     Poppins_700Bold
   });
 
-  if (!fontsLoaded){
+  const { userStorageLoading } = useAuth();
+
+  if (!fontsLoaded || userStorageLoading){
     return <AppLoading />;
   }
 
   return (
     <GestureHandlerRootView style={{flex: 1}}>
       <ThemeProvider theme={theme}>
-        <NavigationContainer>
-          <AppRoutes />
-        </NavigationContainer>
+        <AuthProvider>
+          <Routes />
+        </AuthProvider>
       </ThemeProvider>
     </GestureHandlerRootView>
   )
